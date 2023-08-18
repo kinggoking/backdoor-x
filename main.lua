@@ -1,7 +1,7 @@
 local start = tick()
 print('begin')
 local debuging = true
-local encryption = true
+local encryption = false
 local backdoor_x = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiBiRiK/backdoor-x/main/ui.lua"))();
 local tweenService = game:GetService("TweenService")
 local inputService = game:GetService("UserInputService")
