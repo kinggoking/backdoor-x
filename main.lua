@@ -199,6 +199,7 @@ if encryption then
 	elseif backdoor.ClassName == "RemoteFunction" then
 		backdoor:InvokeServer(scripty)
 	end
+    end
 end
 local function createDrag(frame, dragDelay)
 	local dragToggle, dragInput, dragStart, startPos
